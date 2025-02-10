@@ -57,10 +57,10 @@ print("############# Final Feature Vector #############")
 print(test_feature)
 
 # load trained model, features_list and predict
-with open("/kaggle/working/mgt_classifier.pkl", "rb") as f:
+with open("all_data/mgt_classifier.pkl", "rb") as f:
     clf2 = load(f)
 
-with open('/kaggle/working/features_list.pkl', 'rb') as f:
+with open('all_data/features_list.pkl', 'rb') as f:
     features_list = load(f)
 
 prediction = clf2.predict(test_feature[:,features_list[0]])

@@ -24,7 +24,7 @@ Due to time contraint I could only focus on features created with logits of thes
 - rest of the features are combinations of scalar and vector operations performed on log probabilities of the tokens (taking inspiration from [GhostBuster](https://arxiv.org/abs/2305.15047))
 
 ## Result
-Used `scikit`'s `RFECV` to select features with cross validation such that the F1 (beta=0.5) is maximized. Divided train and test set in the ratio of 80-20. Final trained model is giving F1(beta=0.5) (for AI text ) of 75.8. And on the test set F1(beta=0.5) is 72. `RFECV` selected 8 most important features including binocular score, fast detectget score, perplexity, no of words in text and other log_probs based features. The trained model is still gives good number of false positives and true negatives and can be improved. Following is the connfusion matrix of the test set.
+Used `scikit`'s `RFECV` to select features with cross validation such that the F1 (beta=0.5) is maximized. Divided train and test set in the ratio of 80-20. Final trained model is giving F1(beta=0.5) (for AI text ) of 75.8. And on the test set F1(beta=0.5) is 73. `RFECV` selected 8 most important features including binocular score, fast detectget score, perplexity, no of words in text and other log_probs based features. The trained model is still gives good number of false positives and true negatives and can be improved. Following is the connfusion matrix of the test set.
 ![Confusion Matrix](./all_data/confusion_matrix.png)
 
 

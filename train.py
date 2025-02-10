@@ -17,7 +17,7 @@ from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
 from utils import *
 
 # read training data
-final_df = pd.read_csv("data/prepared_beemo.csv")
+final_df = pd.read_csv("all_data/prepared_beemo.csv")
 X = final_df.drop(["label","text"], axis=1)
 y = final_df["label"]
 
@@ -53,12 +53,13 @@ X_rfe = X_train_scaled[:, rfecv.support_]
 clf.fit(X_rfe, y_train)
 y_test_pred = clf.predict(X_test_scaled[:, rfecv.support_])
 fscore = fbeta_score(y_test, y_test_pred, beta=0.5)
-print(f"F1 Score on Test Set: {fscore}")
+print(f"\nF1 Score on Test Set: {fscore}")
 
 # save classifier and list of selected features
-with open("all_data/mgt_classifier.pkl", "wb") as f:
+print("\n############# Saving Model #############")
+with open("mgt_classifier.pkl", "wb") as f:
     dump(clf, f, protocol=5)
-with open("all_data/features_list.pkl", "wb") as f:
+with open("features_list.pkl", "wb") as f:
     dump([rfecv.support_,X.columns[rfecv.support_].values], f, protocol=5)
 
 

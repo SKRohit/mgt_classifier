@@ -156,4 +156,4 @@ final_df = pd.concat([human_df, model_df], ignore_index=True, sort=False).sample
 print("############# PREPARED DATA (#############")
 print(final_df.head(3))
 
-final_df.to_csv("prepared_beemo.csv", index=False)
+final_df.to_csv("all_data/prepared_beemo.csv", index=False)
