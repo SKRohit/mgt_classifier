@@ -57,9 +57,9 @@ print(f"\nF1 Score on Test Set: {fscore}")
 
 # save classifier and list of selected features
 print("\n############# Saving Model #############")
-with open("mgt_classifier.pkl", "wb") as f:
+with open("all_data/mgt_classifier.pkl", "wb") as f:
     dump(clf, f, protocol=5)
-with open("features_list.pkl", "wb") as f:
+with open("all_data/features_list.pkl", "wb") as f:
     dump([rfecv.support_,X.columns[rfecv.support_].values], f, protocol=5)
 
 
