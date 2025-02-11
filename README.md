@@ -1,7 +1,7 @@
 # mgt_classifier
 Classifier to classify AI vs Human generated text
 
-# Instructions to prepare data
+# Instructions to run code
 Different llms are being used to create features using token logits and log_probs of the tokens. To calculate binocular score, perplexity, coefficeint of variation of texts, and log_probs two llms `openai-community/gpt2`, `openai-community/gpt2-medium`, and for fast_detectgpt score `EleutherAI/gpt-neo-2.7B` are used. All the inferencing was done on free google collab notebooks.
 `python prepare_data.py` will create a csv file `prepared_beemo.csv` file in the `all_data` folder.
 
